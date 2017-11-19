@@ -20,6 +20,10 @@ var PostsService = (function () {
         return this.http.get('https://jsonplaceholder.typicode.com/posts')
             .map(function (res) { return res.json(); });
     };
+    PostsService.prototype.create = function (user) {
+        return this.http.post('http://localhost:8888/register', user)
+            .map(function (res) { return res.json(); });
+    };
     return PostsService;
 }());
 PostsService = __decorate([

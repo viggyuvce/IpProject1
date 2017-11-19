@@ -21,4 +21,4 @@ HomeComponent = __decorate([
     })
 ], HomeComponent);
 exports.HomeComponent = HomeComponent;
-//# sourceMappingURL=user.component.js.map
+//# sourceMappingURL=home.component.js.map
