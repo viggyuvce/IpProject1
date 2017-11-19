@@ -3,3 +3,54 @@ h1 {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 250%;
 }
+.wrap {
+  z-index: 1;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%,-50%);
+  max-width: 620px;
+  width: 85%;
+}
+body {
+  font-family: "Museo Sans","Lucida Grande",Arial,sans-serif;
+  font-size: 15px;
+  line-height: 24px;
+  color: rgb(240, 235, 235);
+}
+#static-header .header-text {
+  width: 100%;
+  height: 100%;
+  background: url(images/piano.gif) no-repeat;
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+  position: absolute;
+  color: rgb(243, 237, 237);
+}
+#static-header .down-arrow img {
+  z-index: 1;
+  width: 15px;
+  height: auto;
+  transform: rotate(-90deg);
+  -webkit-transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
+}
+#static-header .down-arrow {
+  position: relative;
+  top: 90%;
+}
+img {
+  max-width: 100%;
+  width: auto\9;
+  height: auto;
+  vertical-align: middle;
+  border: 0;
+  -ms-interpolation-mode: bicubic;
+}
+#training-steps {
+  padding: 40px 20px 40px 20px;
+  background-color: #0e91a1;
+  color: #fff;
+  text-align: center;
+}
