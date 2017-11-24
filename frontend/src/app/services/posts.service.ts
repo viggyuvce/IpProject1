@@ -13,7 +13,18 @@ export class PostsService {
             .map(res => res.json());
     }
     create(user: User){
-        return this.http.post('http://localhost:8888/register',user)
+        return this.http.post('http://localhost:9889/signup',user)
                 .map(res => res.json());
+    }
+    login(username: string, password: string) {
+        return this.http.post('http://localhost:9889/login', JSON.stringify({ username: username, password: password }))
+            .map(res => {
+                // login successful if there's a jwt token in the response
+                let user = res.json();
+                if (user) {
+                    // store user details and jwt token in local storage to keep user logged in between page refreshes
+                    localStorage.setItem('currentUser', JSON.stringify(user));
+                }
+            });
     }
 }

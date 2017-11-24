@@ -22,11 +22,6 @@ export class SignupComponent  {
     register(){
         this.loading = true;
 
-        if(this.model.password!== this.confirmPassword){
-            console.log("not matching");
-            this.notMatching = true;
-        }
-        else{
         this.postsService.create(this.model)
                 .subscribe(
                     data => {
@@ -38,7 +33,7 @@ export class SignupComponent  {
                         this.loading = false;
                     }
                 )
-        }
+        
     }
     
 

@@ -24,20 +24,14 @@ var SignupComponent = (function () {
     SignupComponent.prototype.register = function () {
         var _this = this;
         this.loading = true;
-        if (this.model.password !== this.confirmPassword) {
-            console.log("not matching");
-            this.notMatching = true;
-        }
-        else {
-            this.postsService.create(this.model)
-                .subscribe(function (data) {
-                _this.alertService.success('Registration Successful', true);
-                _this.router.navigate(['/login']);
-            }, function (error) {
-                _this.alertService.error(error);
-                _this.loading = false;
-            });
-        }
+        this.postsService.create(this.model)
+            .subscribe(function (data) {
+            _this.alertService.success('Registration Successful', true);
+            _this.router.navigate(['/login']);
+        }, function (error) {
+            _this.alertService.error(error);
+            _this.loading = false;
+        });
     };
     return SignupComponent;
 }());

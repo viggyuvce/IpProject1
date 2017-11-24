@@ -21,8 +21,19 @@ var PostsService = (function () {
             .map(function (res) { return res.json(); });
     };
     PostsService.prototype.create = function (user) {
-        return this.http.post('http://localhost:8888/register', user)
+        return this.http.post('http://localhost:9889/signup', user)
             .map(function (res) { return res.json(); });
+    };
+    PostsService.prototype.login = function (username, password) {
+        return this.http.post('http://localhost:9889/login', JSON.stringify({ username: username, password: password }))
+            .map(function (res) {
+            // login successful if there's a jwt token in the response
+            var user = res.json();
+            if (user) {
+                // store user details and jwt token in local storage to keep user logged in between page refreshes
+                localStorage.setItem('currentUser', JSON.stringify(user));
+            }
+        });
     };
     return PostsService;
 }());
