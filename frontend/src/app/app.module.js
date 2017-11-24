@@ -13,6 +13,7 @@ var app_component_1 = require("./app.component");
 var home_component_1 = require("./components/home.component");
 var about_component_1 = require("./components/about.component");
 var signup_component_1 = require("./components/signup.component");
+var login_component_1 = require("./components/login.component");
 var app_routing_1 = require("./app.routing");
 var AppModule = (function () {
     function AppModule() {
@@ -22,7 +23,7 @@ var AppModule = (function () {
 AppModule = __decorate([
     core_1.NgModule({
         imports: [platform_browser_1.BrowserModule, forms_1.FormsModule, http_1.HttpModule, app_routing_1.routing],
-        declarations: [app_component_1.AppComponent, home_component_1.HomeComponent, about_component_1.AboutComponent, signup_component_1.SignupComponent],
+        declarations: [app_component_1.AppComponent, home_component_1.HomeComponent, about_component_1.AboutComponent, signup_component_1.SignupComponent, login_component_1.LoginComponent],
         bootstrap: [app_component_1.AppComponent]
     })
 ], AppModule);
