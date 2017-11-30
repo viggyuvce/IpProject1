@@ -27,4 +27,8 @@ export class PostsService {
                 }
             });
     }
+    check(){
+        return this.http.get('http://localhost:9889/profile')
+                    .map(res => res.json());
+    }
 }

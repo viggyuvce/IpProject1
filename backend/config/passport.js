@@ -26,7 +26,7 @@ module.exports = function(passport) {
 
     // used to serialize the user for the session
     passport.serializeUser(function(user, done) {
-        done(null, user.id);
+        done(null, user.dataValues.id);
     });
 
     passport.deserializeUser(function(id, done) {
@@ -59,15 +59,16 @@ module.exports = function(passport) {
       .then(function(user) {
         var value=bcrypt.compareSync(password,user.dataValues.password);
        
-        console.log(user);
+     //   console.log(user);
         if (!user) {
+
           return done(null, false, false);
         } else if (value==false) {
           console.log("wrong password")
          return done(null, true, false);
         } else if(user && value==true) {
           //console.log("user");
-          return done(null, true, true);
+          return done(null, user, true);
         }
       }).catch(function(err){
       

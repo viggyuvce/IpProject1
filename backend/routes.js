@@ -92,11 +92,11 @@ module.exports = function (app,passport) {
 				}));						
 			}
 			else {
+				sess = req.session;
+				sess.id = user.dataValues.id;
 				res.header('Access-Control-Allow-Origin', '*');
 				res.header('Content-Type', 'application/json');
-				res.status(200).send(JSON.stringify({
-					"success":true
-				}));
+				res.status(200).send(JSON.stringify(user.dataValues.id));
 				if (req.body.remember) {
 					req.session.cookie.maxAge = 1000 * 60 * 3;
 				} else {
@@ -104,6 +104,18 @@ module.exports = function (app,passport) {
 				}
 			}
 		})(req, res);
+	});
+	app.get('/profile',function(req,res){
+		sess = req.session;
+		if(sess.id){
+			console.log(sess.id)
+			res.header('Access-Control-Allow-Origin', '*');
+			res.header('Content-Type', 'application/json');
+			res.status(200).send(JSON.stringify({
+			"success":true,
+			"msg":"session running"
+			}));		
+		}
 	});
 	app.post('/signup', function(req, res) {
 	        passport.authenticate('local-signup', function(err, user, info) {

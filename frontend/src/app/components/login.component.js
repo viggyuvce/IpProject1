@@ -31,7 +31,7 @@ var LoginComponent = (function () {
         this.loading = true;
         this.authenticationService.login(this.model)
             .subscribe(function (data) {
-            _this.router.navigate([_this.returnUrl]);
+            _this.router.navigate(['/profile']);
         }, function (error) {
             _this.alertService.error(error);
             _this.loading = false;

@@ -35,6 +35,10 @@ var PostsService = (function () {
             }
         });
     };
+    PostsService.prototype.check = function () {
+        return this.http.get('http://localhost:9889/profile')
+            .map(function (res) { return res.json(); });
+    };
     return PostsService;
 }());
 PostsService = __decorate([
