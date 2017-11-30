@@ -62,32 +62,41 @@ module.exports = function (app,passport) {
 	app.options("/signup",function(req,res){
 		Controllers.optionController.handler(req,res);
 	});
-	app.post('/login', function (req, res) {
-		passport.authenticate('json', function (err, user, info) {
+	app.post('/login', function (req, res, next) {
+		passport.authenticate('local-login', function (err, user, info) {
+			console.log(info);
 			if (err) {
 				res.header('Access-Control-Allow-Origin', '*');
 				res.header('Content-Type', 'application/json');
-				res.status(200).send({
+				res.status(200).send(JSON.stringify({
 					"success":false,
 					"msg": "Internal Server Error"
-				});
+				}));
 				return;
 			}
 			if (!user) {
 				res.header('Access-Control-Allow-Origin', '*');
 				res.header('Content-Type', 'application/json');
-				res.status(200).send({
+				res.status(200).send(JSON.stringify({
 				"success":false,
 				"msg":"No such user"
-			});
+			}));
 
+			}
+			if(user && !info){
+				res.header('Access-Control-Allow-Origin', '*');
+				res.header('Content-Type', 'application/json');
+				res.status(200).send(JSON.stringify({
+				"success":false,
+				"msg":"wrong password"
+				}));						
 			}
 			else {
 				res.header('Access-Control-Allow-Origin', '*');
 				res.header('Content-Type', 'application/json');
-				res.status(200).send({
+				res.status(200).send(JSON.stringify({
 					"success":true
-				});
+				}));
 				if (req.body.remember) {
 					req.session.cookie.maxAge = 1000 * 60 * 3;
 				} else {

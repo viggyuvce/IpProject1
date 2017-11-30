@@ -49,7 +49,34 @@ module.exports = function(passport) {
     // =========================================================================
     // we are using named strategies since we have one for login and one for signup
     // by default, if there was no name, it would just be called 'local'
-
+    passport.use('local-login',new JsonStrategy({
+      usernameField : 'username',
+      passwordField : 'password',
+      passReqToCallback : true
+  },
+    function(req,username, password, done) {
+      User.find({ where: {username:req.body.username }})
+      .then(function(user) {
+        var value=bcrypt.compareSync(password,user.dataValues.password);
+       
+        console.log(user);
+        if (!user) {
+          return done(null, false, false);
+        } else if (value==false) {
+          console.log("wrong password")
+         return done(null, true, false);
+        } else if(user && value==true) {
+          //console.log("user");
+          return done(null, true, true);
+        }
+      }).catch(function(err){
+      
+        return done(null,false,false);
+      });
+     // return done(null,true,true);
+    }
+  ));
+  
  passport.use(
         'local-signup',
         new JsonStrategy({
@@ -57,11 +84,11 @@ module.exports = function(passport) {
             usernameField : 'username',
             passwordField : 'password',
             emailField : 'email',
-            phonField : 'phone',
+            phoneField : 'phone',
             passReqToCallback : true // allows us to pass back the entire request to the callback
         },
          function(req, username, password, done) {
-
+            console.log("hello");
             User.find({ where: { username:req.body.username}}).then(function(user) {      
             if(user){done(null,user,false);
               }
@@ -84,50 +111,6 @@ module.exports = function(passport) {
 ));
             
       
-
-
-
-
-
-    // passport.use(
-    //     'local-signup',
-    //     new JsonStrategy({
-    //         // by default, local strategy uses username and password, we will override with email
-    //         usernameField : 'username',
-    //         passwordField : 'password',
-    //         passReqToCallback : true // allows us to pass back the entire request to the callback
-    //     },
-    //     function(req, username, password, done) {
-    //         // find a user whose email is the same as the forms email
-    //         // we are checking to see if the user trying to login already exists
-    //         console.log(" "+req.body.usertype);
-    //         connection.query("SELECT * FROM users WHERE BINARY username = ? and usertype = ? ",[username,req.body.usertype], function(err, rows) {
-    //             if (err)
-    //                 return done(err);
-    //             if (rows.length) {
-    //                 return done(null, false, req.flash('signupMessage', 'That username is already taken.'));console.log("rows "+req.body.usertype);
-    //             } else {
-    //                 // if there is no user with that username
-    //                 // create the user
-    //                 console.log("no rows "+req.body.usertype);
-    //                 var newUserMysql = {
-    //                     username: username,
-    //                     usertype: req.body.usertype,
-    //                     password: bcrypt.hashSync(password, null, null)  // use the generateHash function in our user model
-    //                 };
-                    
-    //                 var insertQuery = "INSERT INTO users ( username, password, usertype ) values (?,?,?)";
-
-    //                 connection.query(insertQuery,[newUserMysql.username, newUserMysql.password, newUserMysql.usertype],function(err, rows) {
-    //                   newUserMysql.id = rows.insertId;
-
-    //                     return done(null, newUserMysql);
-    //                 });
-    //             }
-    //         });
-    //     })
-    // );
-
     // =========================================================================
     // LOCAL LOGIN =============================================================
     // =========================================================================
@@ -136,30 +119,6 @@ module.exports = function(passport) {
 
 
 // Use local strategy to create user account
-passport.use(new JsonStrategy({
-    usernameField : 'username',
-    passwordField : 'password',
-    passReqToCallback : true
-},
-  function(req,username, password, done) {
-    User.find({ where: {username:req.body.username }}).then(function(user) {
-       var value=bcrypt.compareSync(password,user.password);
-      if (!user) {
-       // console.log("not user");
-        done(null, false, false);
-      } else if (value==false) {
-       done(null, false, false);
-      } else {
-        //console.log("user");
-        done(null, user);
-      }
-    }).catch(function(err){
-      done(err);
-    });
-  }
-));
-
-};
 
 
 
@@ -188,4 +147,4 @@ passport.use(new JsonStrategy({
 //             });
 //         })
 //     );
-// };
+ };
