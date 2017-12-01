@@ -6,6 +6,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 var core_1 = require("@angular/core");
+var posts_service_1 = require("../services/posts.service");
 var AboutComponent = (function () {
     function AboutComponent() {
     }
@@ -13,8 +14,10 @@ var AboutComponent = (function () {
 }());
 AboutComponent = __decorate([
     core_1.Component({
-        selector: 'about',
-        template: "\n  <div class=\"jumbotron text-center\">\n    <h1>Musyqa</h1>\n    <p>Its the about page!</p>\n</div>\n  ",
+        selector: 'home',
+        templateUrl: './html/about.component.html',
+        providers: [posts_service_1.PostsService],
+        moduleId: module.id
     })
 ], AboutComponent);
 exports.AboutComponent = AboutComponent;

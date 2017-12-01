@@ -1,13 +1,10 @@
 import { Component } from '@angular/core';
-
+import {PostsService} from '../services/posts.service';
 @Component({
-  selector: 'about',
-  template: `
-  <div class="jumbotron text-center">
-    <h1>Musyqa</h1>
-    <p>Its the about page!</p>
-</div>
-  `,
+  selector: 'home',
+  templateUrl: './html/about.component.html',
+  providers : [PostsService],
+  moduleId: module.id
 })
 export class AboutComponent  {
 
