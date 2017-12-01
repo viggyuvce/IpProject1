@@ -9,6 +9,7 @@ var core_1 = require("@angular/core");
 var platform_browser_1 = require("@angular/platform-browser");
 var forms_1 = require("@angular/forms");
 var http_1 = require("@angular/http");
+var logout_component_1 = require("./components/logout.component");
 var app_component_1 = require("./app.component");
 var home_component_1 = require("./components/home.component");
 var about_component_1 = require("./components/about.component");
@@ -24,7 +25,8 @@ var AppModule = (function () {
 AppModule = __decorate([
     core_1.NgModule({
         imports: [platform_browser_1.BrowserModule, forms_1.FormsModule, http_1.HttpModule, app_routing_1.routing],
-        declarations: [app_component_1.AppComponent, home_component_1.HomeComponent, about_component_1.AboutComponent, signup_component_1.SignupComponent, login_component_1.LoginComponent, profile_component_1.ProfileComponent],
+        declarations: [app_component_1.AppComponent, home_component_1.HomeComponent, about_component_1.AboutComponent, signup_component_1.SignupComponent, login_component_1.LoginComponent, profile_component_1.ProfileComponent,
+            logout_component_1.LogoutComponent],
         bootstrap: [app_component_1.AppComponent]
     })
 ], AppModule);

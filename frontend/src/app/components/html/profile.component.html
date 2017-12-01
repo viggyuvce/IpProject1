@@ -1,8 +1,11 @@
-<html>
-    <body>
+<div *ngIf="loggedin">
         <h1>
-            Hello you are logged in 
-            <button (click) = "checkLog()" >button</button>
-        </h1>
-    </body>
-</html>
+            Hello you are logged in </h1>
+            <p>click here to log out</p>
+            <button (click) = "logout()" >logout</button>
+</div>
+<div *ngIf="loggedout">
+    <h1>Please login dude</h1>
+    <p>click here to login</p>
+    <button (click) = "login()" >login</button>
+</div>

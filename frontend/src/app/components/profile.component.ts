@@ -8,26 +8,28 @@ import {PostsService} from '../services/posts.service';
     moduleId: module.id
 })
 export class ProfileComponent  {
-    id: number;
-    loading = false;
+    id: string;
+    loggedin = false;
+    loggedout = true;
     constructor(
         private router: Router,
         private postService : PostsService
-     ) { }
+     ) { 
+         this.id = this.postService.check();
+         console.log(this.id);
+         if(this.id != null)
+         {
+             this.loggedin = true;
+             this.loggedout = false;
+         }
+     }
 
-    checkLog(){
-        this.loading = true;
-        this.postService.check()
-        .subscribe(
-            data => {
-                this.id = 1;
-              //  this.router.navigate(['/login']);
-            },
-            error => {
-                //this.alertService.error(error);
-                this.loading = false;
-            }
-        )
+    logout(){
+        this.postService.logout();
+        this.router.navigate(['/logout']);
+    }
+    login(){
+        this.router.navigate(['/login']);
     }
 }
 

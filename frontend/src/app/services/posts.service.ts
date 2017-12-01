@@ -16,7 +16,7 @@ export class PostsService {
         return this.http.post('http://localhost:9889/signup',user)
                 .map(res => res.json());
     }
-    login(username: string, password: string) {
+   /* login(username: string, password: string) {
         return this.http.post('http://localhost:9889/login', JSON.stringify({ username: username, password: password }))
             .map(res => {
                 // login successful if there's a jwt token in the response
@@ -26,9 +26,12 @@ export class PostsService {
                     localStorage.setItem('currentUser', JSON.stringify(user));
                 }
             });
+    }*/
+    logout(){
+        localStorage.clear();   
     }
     check(){
-        return this.http.get('http://localhost:9889/profile')
-                    .map(res => res.json());
+        return localStorage.getItem('currentUser'); 
+                
     }
 }

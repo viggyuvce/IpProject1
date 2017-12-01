@@ -9,39 +9,45 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require("@angular/core");
-var router_1 = require("@angular/router");
 var posts_service_1 = require("../services/posts.service");
-var ProfileComponent = (function () {
-    function ProfileComponent(router, postService) {
+//import {AlertService} from '../services/alert.service';
+var router_1 = require("@angular/router");
+//import {User} from '../models/user';
+var LogoutComponent = (function () {
+    function LogoutComponent(router, postsService) {
         this.router = router;
-        this.postService = postService;
-        this.loggedin = false;
-        this.loggedout = true;
-        this.id = this.postService.check();
-        console.log(this.id);
-        if (this.id != null) {
-            this.loggedin = true;
-            this.loggedout = false;
-        }
+        this.postsService = postsService;
+        this.loading = false;
+        this.model = {};
+        this.notMatching = false;
     }
-    ProfileComponent.prototype.logout = function () {
-        this.postService.logout();
-        this.router.navigate(['/logout']);
-    };
-    ProfileComponent.prototype.login = function () {
+    LogoutComponent.prototype.signin = function () {
+        this.loading = true;
         this.router.navigate(['/login']);
+        /*
+        this.postsService.create(this.model)
+                .subscribe(
+                    data => {
+                        this.alertService.success('Registration Successful',true)
+                        this.router.navigate(['/login']);
+                    },
+                    error => {
+                        this.alertService.error(error);
+                        this.loading = false;
+                    }
+                )*/
     };
-    return ProfileComponent;
+    return LogoutComponent;
 }());
-ProfileComponent = __decorate([
+LogoutComponent = __decorate([
     core_1.Component({
-        selector: 'profile',
-        templateUrl: './html/profile.component.html',
+        selector: 'logout',
+        templateUrl: './html/logout.component.html',
         providers: [posts_service_1.PostsService],
         moduleId: module.id
     }),
     __metadata("design:paramtypes", [router_1.Router,
         posts_service_1.PostsService])
-], ProfileComponent);
-exports.ProfileComponent = ProfileComponent;
-//# sourceMappingURL=profile.component.js.map
+], LogoutComponent);
+exports.LogoutComponent = LogoutComponent;
+//# sourceMappingURL=logout.component.js.map
