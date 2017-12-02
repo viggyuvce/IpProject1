@@ -9,6 +9,7 @@ import {PostsService} from '../services/posts.service';
 })
 export class ProfileComponent  {
     id: string;
+    name: string;
     loggedin = false;
     loggedout = true;
     constructor(
@@ -21,6 +22,16 @@ export class ProfileComponent  {
          {
              this.loggedin = true;
              this.loggedout = false;
+             postService.getName(this.id)
+             .subscribe(
+                data => {
+                    this.name = data;
+                },
+                error => {
+            
+                }
+            )
+             
          }
      }
 

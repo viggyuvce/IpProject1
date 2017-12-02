@@ -1,4 +1,5 @@
 module.exports.optionController = require('./controllers/optionController.js');
+module.exports.getName = require('./controllers/getName.js');
 /*module.exports.insertComposer = require('./controllers/insertComposer.js');
 
 module.exports.insertGenre = require('./controllers/insertGenre.js');

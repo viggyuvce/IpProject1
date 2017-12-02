@@ -24,6 +24,10 @@ var PostsService = (function () {
         return this.http.post('http://localhost:9889/signup', user)
             .map(function (res) { return res.json(); });
     };
+    PostsService.prototype.getName = function (id) {
+        return this.http.get('http://localhost:9889/getName/' + id)
+            .map(function (res) { return res.json(); });
+    };
     /* login(username: string, password: string) {
          return this.http.post('http://localhost:9889/login', JSON.stringify({ username: username, password: password }))
              .map(res => {

@@ -56,6 +56,9 @@ module.exports = function (app,passport) {
 	app.get("/api/showGenre",function(req,res){
 		Controllers.showGenre.showGenre(req,res);
 	});*/
+	app.get('/getName/:id',function(req,res){
+		Controllers.getName.getName(req,res);
+	});
 	app.options("/login",function(req,res){
 		Controllers.optionController.handler(req,res);
 	});

@@ -13,6 +13,7 @@ var router_1 = require("@angular/router");
 var posts_service_1 = require("../services/posts.service");
 var ProfileComponent = (function () {
     function ProfileComponent(router, postService) {
+        var _this = this;
         this.router = router;
         this.postService = postService;
         this.loggedin = false;
@@ -22,6 +23,11 @@ var ProfileComponent = (function () {
         if (this.id != null) {
             this.loggedin = true;
             this.loggedout = false;
+            postService.getName(this.id)
+                .subscribe(function (data) {
+                _this.name = data;
+            }, function (error) {
+            });
         }
     }
     ProfileComponent.prototype.logout = function () {

@@ -16,6 +16,10 @@ export class PostsService {
         return this.http.post('http://localhost:9889/signup',user)
                 .map(res => res.json());
     }
+    getName(id: string){
+        return this.http.get('http://localhost:9889/getName/'+id)
+                .map(res => res.json());
+    }
    /* login(username: string, password: string) {
         return this.http.post('http://localhost:9889/login', JSON.stringify({ username: username, password: password }))
             .map(res => {
