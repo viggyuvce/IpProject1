@@ -1,0 +1,55 @@
+<div *ngIf="loggedin">
+        <nav class="navbar navbar-fixed-top navbar-default" style="background: white none repeat scroll 0% 0%;">
+            <div class="container-fluid">
+                <a class="navbar-brand active mr-auto" href="#" routerLink="/">Musyqa</a>
+            <div>
+                <ul class="nav navbar-nav navbar-right nav-buttons">
+                    <li><a class="btn" (click)="logout()" routerLink="/logout">Logout</a></li>
+                    <li><a class="btn"  routerLink="/about">About</a></li>
+                </ul>
+            </div>
+            </div>
+        </nav>
+        <div class="grade-list">
+            <section id="grades">
+            <div class="container container-grades">
+                    <ul class="list-group" *ngFor=" let number of numbers">
+                            <div *ngIf="check(number)">
+                            <li class="list-group-item justify-content-between">
+                              Grade {{number}}
+                              <span class="badge badge-default badge-pill">14</span>
+                            </li>
+                            </div>
+                            <div *ngIf="!check(number)">
+                                    <li class="list-group-item justify-content-between disabled">
+                                      Grade {{number}}
+                                      <span class="badge badge-default badge-pill">14</span>
+                                    </li>
+                            </div>
+                          </ul>  
+            </div>   
+    
+            </section>
+        </div>
+    </div>
+    <div *ngIf="loggedout">
+        <nav class="navbar navbar-fixed-top navbar-default" style="background: white none repeat scroll 0% 0%;">
+            <div class="container-fluid">
+                <a class="navbar-brand active mr-auto" href="#" routerLink="/">Musyqa</a>
+            <div>
+                <ul class="nav navbar-nav navbar-right nav-buttons">
+                        <li><a class="btn" routerLink="/signup">Signup</a></li>
+                    <li><a class="btn" routerLink="/login">Login</a></li>
+                    <li><a class="btn" routerLink="/about">About</a></li>
+                    
+                </ul>
+            </div>
+            </div>
+        </nav>
+        <div class ="logout-page">
+            <div class="container jumbotron jumbotron-logout">
+            <h3>PLEASE LOGIN/SIGNUP</h3>
+            </div>
+        </div>
+    </div>
+    

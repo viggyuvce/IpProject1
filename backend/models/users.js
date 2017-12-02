@@ -5,6 +5,8 @@ module.exports = function(sequelize, DataTypes){
 		password : DataTypes.STRING,
 		email: DataTypes.STRING,
 		phone: DataTypes.STRING,
+		grades : DataTypes.INTEGER,
+		ranks: DataTypes.INTEGER
 	//	points	:DataTypes.INTEGER
 	//	usertype : {type :DataTypes.INTEGER, defaultValue : 3}, 
 	//	contactNo : DataTypes.STRING

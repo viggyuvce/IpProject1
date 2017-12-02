@@ -24,21 +24,14 @@ var PostsService = (function () {
         return this.http.post('http://localhost:9889/signup', user)
             .map(function (res) { return res.json(); });
     };
+    PostsService.prototype.getCompletedGrades = function (id) {
+        return this.http.get('http://localhost:9889/getCompletedGrades/' + id)
+            .map(function (res) { return res.json(); });
+    };
     PostsService.prototype.getName = function (id) {
         return this.http.get('http://localhost:9889/getName/' + id)
             .map(function (res) { return res.json(); });
     };
-    /* login(username: string, password: string) {
-         return this.http.post('http://localhost:9889/login', JSON.stringify({ username: username, password: password }))
-             .map(res => {
-                 // login successful if there's a jwt token in the response
-                 let user = res.json();
-                 if (user) {
-                     // store user details and jwt token in local storage to keep user logged in between page refreshes
-                     localStorage.setItem('currentUser', JSON.stringify(user));
-                 }
-             });
-     }*/
     PostsService.prototype.logout = function () {
         localStorage.clear();
     };

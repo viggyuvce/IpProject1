@@ -1,5 +1,6 @@
 import {ModuleWithProviders} from '@angular/core';
 import {Routes, RouterModule} from '@angular/router';
+import {GradeComponent} from './components/grade.component';
 import {HomeComponent} from './components/home.component';
 import {AboutComponent} from './components/about.component';
 import {LogoutComponent} from './components/logout.component';
@@ -30,6 +31,10 @@ const appRoutes: Routes = [
     {
         path : 'logout',
         component: LogoutComponent
+    },
+    {
+        path : 'grades',
+        component: GradeComponent
     },
 ];
 

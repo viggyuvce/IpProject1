@@ -4,8 +4,8 @@
             <a class="navbar-brand active mr-auto" href="#" routerLink="/">Musyqa</a>
         <div>
             <ul class="nav navbar-nav navbar-right nav-buttons">
-                <li><a class="btn" routerLink="/logout">Logout</a></li>
-                <li><a class="btn" routerLink="/about">About</a></li>
+                <li><a class="btn" (click)="logout()" routerLink="/logout">Logout</a></li>
+                <li><a class="btn"  routerLink="/about">About</a></li>
             </ul>
         </div>
         </div>
@@ -14,8 +14,10 @@
         <section id="welcome">
         <div class="container container-welcome">
             <h2>Welcome to Musyqa!</h2>
-            <h1>Maestro {{name}}</h1>       
-        </div>    
+            <h1>Maestro {{name}}</h1>    
+            <button type="button" class="btn btn-primary" routerLink="/grades">Let's Train</button>   
+        </div>   
+
         </section>
     </div>
 </div>
@@ -25,10 +27,17 @@
             <a class="navbar-brand active mr-auto" href="#" routerLink="/">Musyqa</a>
         <div>
             <ul class="nav navbar-nav navbar-right nav-buttons">
+                    <li><a class="btn" routerLink="/signup">Signup</a></li>
                 <li><a class="btn" routerLink="/login">Login</a></li>
                 <li><a class="btn" routerLink="/about">About</a></li>
+                
             </ul>
         </div>
         </div>
     </nav>
+    <div class ="logout-page">
+        <div class="container jumbotron jumbotron-logout">
+        <h3>PLEASE LOGIN/SIGNUP</h3>
+        </div>
+    </div>
 </div>

@@ -28,10 +28,12 @@ CREATE TABLE `users` (
   `password` varchar(255) DEFAULT NULL,
   `email` varchar(255) DEFAULT NULL,
   `phone` varchar(255) DEFAULT NULL,
+  `grades` int(11) DEFAULT NULL,
+  `ranks` int(11) DEFAULT NULL,
   `createdAt` datetime NOT NULL,
   `updatedAt` datetime NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -40,7 +42,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (13,'Vignesh','$2a$10$6tSG3I70u/bRZRKMn4Nme.6ruPvw6d0h1N3myAsu.KxmhKeJ1Dg/W','ibalvignesh@yahoo.com','9901063987','2017-11-30 13:42:42','2017-11-30 13:42:42'),(14,'f','$2a$10$RxPbbf3l5cyK5LWdJOC5xuh3y0ps/SsinKbRIJrzXmwVvMYtKg9pW','f','f','2017-11-30 13:54:17','2017-11-30 13:54:17'),(15,'T','$2a$10$nADv4vegg3jtxdWA9keOEOMTtQ74v7ffKxruvg7e6aHX8Ej34K7/O','T','T','2017-12-01 10:24:38','2017-12-01 10:24:38');
+INSERT INTO `users` VALUES (1,'Vignesh','$2a$10$nfLX/HCccuiaC8hzRBoxl.SozIOl7jWhHwNgf.NlVDpj4Zvcxg0EK','v','v',1,1,'2017-12-02 09:28:45','2017-12-02 09:28:45');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -53,4 +55,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-12-02 13:33:37
+-- Dump completed on 2017-12-02 15:27:34

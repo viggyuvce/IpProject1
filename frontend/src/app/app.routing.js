@@ -1,5 +1,6 @@
 "use strict";
 var router_1 = require("@angular/router");
+var grade_component_1 = require("./components/grade.component");
 var home_component_1 = require("./components/home.component");
 var about_component_1 = require("./components/about.component");
 var logout_component_1 = require("./components/logout.component");
@@ -30,6 +31,10 @@ var appRoutes = [
     {
         path: 'logout',
         component: logout_component_1.LogoutComponent
+    },
+    {
+        path: 'grades',
+        component: grade_component_1.GradeComponent
     },
 ];
 exports.routing = router_1.RouterModule.forRoot(appRoutes);

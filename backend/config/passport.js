@@ -99,7 +99,9 @@ module.exports = function(passport) {
                         username: username,
                         email: req.body.email,
                         phone : req.body.phone,
-                        password: bcrypt.hashSync(password, null, null)  // use the generateHash function in our user model
+                        password: bcrypt.hashSync(password, null, null),
+                        grades: 1,
+                        ranks: 1,  // use the generateHash function in our user model
                     };
                     User.create(newUserMysql);
                     done(null,newUserMysql,true);
