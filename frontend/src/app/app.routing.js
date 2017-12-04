@@ -7,6 +7,7 @@ var logout_component_1 = require("./components/logout.component");
 var signup_component_1 = require("./components/signup.component");
 var login_component_1 = require("./components/login.component");
 var profile_component_1 = require("./components/profile.component");
+var list_component_1 = require("./components/list.component");
 var appRoutes = [
     {
         path: '',
@@ -35,6 +36,10 @@ var appRoutes = [
     {
         path: 'grades',
         component: grade_component_1.GradeComponent
+    },
+    {
+        path: 'list/:id',
+        component: list_component_1.ListComponent
     },
 ];
 exports.routing = router_1.RouterModule.forRoot(appRoutes);

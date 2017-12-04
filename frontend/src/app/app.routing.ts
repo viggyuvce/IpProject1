@@ -7,6 +7,7 @@ import {LogoutComponent} from './components/logout.component';
 import {SignupComponent} from './components/signup.component';
 import {LoginComponent} from './components/login.component';
 import {ProfileComponent} from './components/profile.component';
+import {ListComponent} from './components/list.component';
 const appRoutes: Routes = [
     {
         path : '',
@@ -35,6 +36,10 @@ const appRoutes: Routes = [
     {
         path : 'grades',
         component: GradeComponent
+    },
+    {
+        path : 'list/:id',
+        component: ListComponent
     },
 ];
 

@@ -20,6 +20,10 @@ export class PostsService {
         return this.http.get('http://localhost:9889/getCompletedGrades/'+id)
                 .map(res => res.json());
     }
+    getCompletedRanks(id: string){
+        return this.http.get('http://localhost:9889/getCompletedGrades/'+id)
+                .map(res => res.json());
+    }
     getName(id: string){
         return this.http.get('http://localhost:9889/getName/'+id)
                 .map(res => res.json());
@@ -28,7 +32,6 @@ export class PostsService {
         localStorage.clear();   
     }
     check(){
-        return localStorage.getItem('currentUser'); 
-                
+        return localStorage.getItem('currentUser');                 
     }
 }

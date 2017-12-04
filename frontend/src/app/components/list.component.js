@@ -11,8 +11,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require("@angular/core");
 var router_1 = require("@angular/router");
 var posts_service_1 = require("../services/posts.service");
-var GradeComponent = (function () {
-    function GradeComponent(router, postService) {
+var ListComponent = (function () {
+    function ListComponent(router, postService) {
         var _this = this;
         this.router = router;
         this.postService = postService;
@@ -29,32 +29,40 @@ var GradeComponent = (function () {
                 console.log(_this.completedGrades);
             }, function (error) {
             });
+            postService.getCompletedRanks(this.id)
+                .subscribe(function (data) {
+                _this.completedRanks = data;
+                console.log(_this.completedRanks);
+            }, function (error) {
+            });
         }
     }
-    GradeComponent.prototype.checkGrade = function (num) {
-        if (num <= this.completedGrades)
+    ListComponent.prototype.check = function (num) {
+        if (this.currentPageGrade < this.completedGrades)
+            return true;
+        if (num <= this.completedRanks)
             return true;
         else
             return false;
     };
-    GradeComponent.prototype.logout = function () {
+    ListComponent.prototype.logout = function () {
         this.postService.logout();
         this.router.navigate(['/logout']);
     };
-    GradeComponent.prototype.login = function () {
+    ListComponent.prototype.login = function () {
         this.router.navigate(['/login']);
     };
-    return GradeComponent;
+    return ListComponent;
 }());
-GradeComponent = __decorate([
+ListComponent = __decorate([
     core_1.Component({
         selector: 'profile',
-        templateUrl: './html/grade.component.html',
+        templateUrl: './html/list.component.html',
         providers: [posts_service_1.PostsService],
         moduleId: module.id
     }),
     __metadata("design:paramtypes", [router_1.Router,
         posts_service_1.PostsService])
-], GradeComponent);
-exports.GradeComponent = GradeComponent;
-//# sourceMappingURL=grade.component.js.map
+], ListComponent);
+exports.ListComponent = ListComponent;
+//# sourceMappingURL=list.component.js.map

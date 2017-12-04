@@ -17,6 +17,7 @@ var signup_component_1 = require("./components/signup.component");
 var login_component_1 = require("./components/login.component");
 var profile_component_1 = require("./components/profile.component");
 var grade_component_1 = require("./components/grade.component");
+var list_component_1 = require("./components/list.component");
 var app_routing_1 = require("./app.routing");
 var AppModule = (function () {
     function AppModule() {
@@ -26,7 +27,7 @@ var AppModule = (function () {
 AppModule = __decorate([
     core_1.NgModule({
         imports: [platform_browser_1.BrowserModule, forms_1.FormsModule, http_1.HttpModule, app_routing_1.routing],
-        declarations: [app_component_1.AppComponent, home_component_1.HomeComponent, about_component_1.AboutComponent, signup_component_1.SignupComponent, grade_component_1.GradeComponent, login_component_1.LoginComponent, profile_component_1.ProfileComponent,
+        declarations: [app_component_1.AppComponent, home_component_1.HomeComponent, list_component_1.ListComponent, about_component_1.AboutComponent, signup_component_1.SignupComponent, grade_component_1.GradeComponent, login_component_1.LoginComponent, profile_component_1.ProfileComponent,
             logout_component_1.LogoutComponent],
         bootstrap: [app_component_1.AppComponent]
     })

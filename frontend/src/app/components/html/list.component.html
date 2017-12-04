@@ -14,15 +14,15 @@
             <section id="grades">
             <div class="container container-grades">
                         <div *ngFor=" let number of numbers">
-                            <div *ngIf="checkGrade(number)">
-                            <a routerLink="/list/{{number}}" class="list-group-item list-group-item-action">
-                              Grade {{number}}
+                            <div *ngIf="check(number)">
+                            <a routerLink="/music/{{currentPageGrade}}/{{number}}" class="list-group-item list-group-item-action">
+                              Music {{number}}
                               <span class="badge badge-default badge-pill">14</span>
                             </a>
                             </div>
-                            <div *ngIf="!checkGrade(number)">
-                                    <a routerLink="/list/{{number}}" class="list-group-item list-group-item-action disabled">
-                                      Grade {{number}}
+                            <div *ngIf="!check(number)">
+                                    <a routerLink="/music/{{currentPageGrade}}/{{number}}" class="list-group-item list-group-item-action disabled">
+                                      Music {{number}}
                                       <span class="badge badge-default badge-pill">14</span>
                             </a>
                             </div>
