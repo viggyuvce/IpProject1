@@ -10,70 +10,44 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require("@angular/core");
 var router_1 = require("@angular/router");
-var posts_service_1 = require("../services/posts.service");
-var ListComponent = (function () {
-    function ListComponent(router, route, postService) {
+var posts_service_1 = require("../../services/posts.service");
+var SCLComponent = (function () {
+    function SCLComponent(router, postService) {
         var _this = this;
         this.router = router;
-        this.route = route;
         this.postService = postService;
-        this.numbers = [1, 2, 3, 4, 5, 6, 7, 8];
         this.loggedin = false;
         this.loggedout = true;
         this.id = this.postService.check();
+        console.log(this.id);
         if (this.id != null) {
             this.loggedin = true;
             this.loggedout = false;
-            postService.getCompletedGrades(this.id)
-                .subscribe(function (data) {
-                _this.completedGrades = data;
-                console.log(_this.completedGrades);
-            }, function (error) {
-            });
-            postService.getCompletedRanks(this.id)
-                .subscribe(function (data) {
-                _this.completedRanks = data;
-                console.log(_this.completedRanks);
-            }, function (error) {
-            });
             postService.getName(this.id)
                 .subscribe(function (data) {
                 _this.name = data;
             }, function (error) {
             });
-            this.route.params.subscribe(function (params) {
-                _this.currentPageGrade = Number.parseInt(params['id']);
-                console.log(_this.currentPageGrade);
-            });
         }
     }
-    ListComponent.prototype.check = function (num) {
-        if (this.currentPageGrade < this.completedGrades)
-            return true;
-        if (num <= this.completedRanks)
-            return true;
-        else
-            return false;
-    };
-    ListComponent.prototype.logout = function () {
+    SCLComponent.prototype.logout = function () {
         this.postService.logout();
         this.router.navigate(['/logout']);
     };
-    ListComponent.prototype.login = function () {
+    SCLComponent.prototype.login = function () {
         this.router.navigate(['/login']);
     };
-    return ListComponent;
+    return SCLComponent;
 }());
-ListComponent = __decorate([
+SCLComponent = __decorate([
     core_1.Component({
-        selector: 'list',
-        templateUrl: './html/list.component.html',
+        selector: 'scl',
+        templateUrl: './html/scl.component.html',
         providers: [posts_service_1.PostsService],
         moduleId: module.id
     }),
     __metadata("design:paramtypes", [router_1.Router,
-        router_1.ActivatedRoute,
         posts_service_1.PostsService])
-], ListComponent);
-exports.ListComponent = ListComponent;
-//# sourceMappingURL=list.component.js.map
+], SCLComponent);
+exports.SCLComponent = SCLComponent;
+//# sourceMappingURL=scl.component.js.map

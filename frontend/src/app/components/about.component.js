@@ -14,7 +14,7 @@ var AboutComponent = (function () {
 }());
 AboutComponent = __decorate([
     core_1.Component({
-        selector: 'home',
+        selector: 'about',
         templateUrl: './html/about.component.html',
         providers: [posts_service_1.PostsService],
         moduleId: module.id

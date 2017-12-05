@@ -8,6 +8,8 @@ var signup_component_1 = require("./components/signup.component");
 var login_component_1 = require("./components/login.component");
 var profile_component_1 = require("./components/profile.component");
 var list_component_1 = require("./components/list.component");
+var theory_intro_1 = require("./components/theory.intro");
+var scl_component_1 = require("./components/courses/scl.component");
 var appRoutes = [
     {
         path: '',
@@ -40,6 +42,14 @@ var appRoutes = [
     {
         path: 'list/:id',
         component: list_component_1.ListComponent
+    },
+    {
+        path: 'basicMusicTheory/intro',
+        component: theory_intro_1.TheoryIntroComponent
+    },
+    {
+        path: 'course/scl',
+        component: scl_component_1.SCLComponent
     },
 ];
 exports.routing = router_1.RouterModule.forRoot(appRoutes);

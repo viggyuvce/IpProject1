@@ -11,25 +11,29 @@
             </div>
             </div>
         </nav>
-        <div class="grade-list">
-            <section id="grades">
-
-            <div class="container container-grades">
-                    <a routerLink="/basicMusicTheory/intro" class="list-group-item list-group-item-action">
-                        Basic Music Theory
-                        </a>
-                        <div *ngFor=" let number of numbers">
-                            <div *ngIf="checkGrade(number)">
-                            <a routerLink="/list/{{number}}" class="list-group-item list-group-item-action">
-                            Grade {{number}}
+        <div class="course-list">
+            <section id="courses">
+            <div class="container container-course">
+                        
+                            <a routerLink="/course/scl" class="list-group-item list-group-item-action">
+                              The Staff, Clefs and Ledger Lines
                             </a>
-                            </div>
-                            <div *ngIf="!checkGrade(number)">
-                                    <a routerLink="/list/{{number}}" class="list-group-item list-group-item-action disabled">
-                                      Grade {{number}}
+                            <a routerLink="/course/noteDuration" class="list-group-item list-group-item-action">
+                               Note Duration
                             </a>
-                            </div>
-                            </div> 
+                            <a routerLink="/course/measuresAndTimeSignature" class="list-group-item list-group-item-action">
+                                Measures and Time Signature
+                            </a>
+                            <a routerLink="/course/restDuration" class="list-group-item list-group-item-action">
+                                Rest Duration
+                            </a>
+                            <a routerLink="/course/dotsAndTies" class="list-group-item list-group-item-action">
+                                Dots and ties
+                            </a>
+                             <a routerLink="/course/stepsAndAccidentals" class="list-group-item list-group-item-action">
+                                Steps and Accidentals
+                            </a>
+                         
             </div>   
     
             </section>

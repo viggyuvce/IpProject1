@@ -8,6 +8,8 @@ import {SignupComponent} from './components/signup.component';
 import {LoginComponent} from './components/login.component';
 import {ProfileComponent} from './components/profile.component';
 import {ListComponent} from './components/list.component';
+import { TheoryIntroComponent } from './components/theory.intro';
+import {SCLComponent} from './components/courses/scl.component';
 const appRoutes: Routes = [
     {
         path : '',
@@ -40,6 +42,14 @@ const appRoutes: Routes = [
     {
         path : 'list/:id',
         component: ListComponent
+    },
+    {
+        path : 'basicMusicTheory/intro',
+        component: TheoryIntroComponent
+    },
+    {
+        path : 'course/scl',
+        component: SCLComponent
     },
 ];
 

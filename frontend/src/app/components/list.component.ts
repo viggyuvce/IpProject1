@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import {Router,ActivatedRoute} from '@angular/router';
 import {PostsService} from '../services/posts.service';
 @Component({
-    selector: 'profile',
+    selector: 'list',
     templateUrl: './html/list.component.html',
     providers : [PostsService],
     moduleId: module.id

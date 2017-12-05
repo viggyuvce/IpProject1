@@ -53,7 +53,7 @@ var GradeComponent = (function () {
 }());
 GradeComponent = __decorate([
     core_1.Component({
-        selector: 'profile',
+        selector: 'grade',
         templateUrl: './html/grade.component.html',
         providers: [posts_service_1.PostsService],
         moduleId: module.id

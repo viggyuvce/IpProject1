@@ -12,11 +12,13 @@ import {LoginComponent} from './components/login.component';
 import {ProfileComponent} from './components/profile.component';
 import {GradeComponent} from './components/grade.component';
 import {ListComponent} from './components/list.component';
+import {TheoryIntroComponent} from './components/theory.intro';
+import {SCLComponent} from './components/courses/scl.component';
 import {routing} from './app.routing';
 @NgModule({
   imports:      [ BrowserModule, FormsModule, HttpModule, routing ],
   declarations: [ AppComponent,HomeComponent, ListComponent,AboutComponent, SignupComponent, GradeComponent,LoginComponent, ProfileComponent
-                ,LogoutComponent],
+                ,LogoutComponent, TheoryIntroComponent,SCLComponent],
   bootstrap:    [ AppComponent ]
 })
 export class AppModule { }

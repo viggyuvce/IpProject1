@@ -2,16 +2,14 @@ import { Component } from '@angular/core';
 import {Router} from '@angular/router';
 import {PostsService} from '../services/posts.service';
 @Component({
-    selector: 'grade',
-    templateUrl: './html/grade.component.html',
+    selector: 'profile',
+    templateUrl: './html/theory.intro.html',
     providers : [PostsService],
     moduleId: module.id
 })
-export class GradeComponent  {
+export class TheoryIntroComponent  {
     id: string;
     name: string;
-    completedGrades: number;
-    numbers = [1,2,3,4,5,6,7,8];
     loggedin = false;
     loggedout = true;
     constructor(
@@ -19,20 +17,11 @@ export class GradeComponent  {
         private postService : PostsService
      ) { 
          this.id = this.postService.check();
+         console.log(this.id);
          if(this.id != null)
          {
              this.loggedin = true;
              this.loggedout = false;
-             postService.getCompletedGrades(this.id)
-             .subscribe(
-                data => {
-                    this.completedGrades = data;
-                    console.log(this.completedGrades);
-                },
-                error => {
-            
-                }
-             );
              postService.getName(this.id)
              .subscribe(
                 data => {
@@ -42,13 +31,10 @@ export class GradeComponent  {
             
                 }
             )
-            
+             
          }
      }
-    checkGrade(num:number){
-        if(num <= this.completedGrades) return true;
-        else return false;
-    } 
+
     logout(){
         this.postService.logout();
         this.router.navigate(['/logout']);
