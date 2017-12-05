@@ -29,7 +29,7 @@ var PostsService = (function () {
             .map(function (res) { return res.json(); });
     };
     PostsService.prototype.getCompletedRanks = function (id) {
-        return this.http.get('http://localhost:9889/getCompletedGrades/' + id)
+        return this.http.get('http://localhost:9889/getCompletedRanks/' + id)
             .map(function (res) { return res.json(); });
     };
     PostsService.prototype.getName = function (id) {

@@ -4,6 +4,7 @@
                 <a class="navbar-brand active mr-auto" href="#" routerLink="/">Musyqa</a>
             <div>
                 <ul class="nav navbar-nav navbar-right nav-buttons">
+                    <li><a class="btn">Hello {{name}}!</a></li>
                     <li><a class="btn" (click)="logout()" routerLink="/logout">Logout</a></li>
                     <li><a class="btn"  routerLink="/about">About</a></li>
                 </ul>
@@ -16,14 +17,12 @@
                         <div *ngFor=" let number of numbers">
                             <div *ngIf="checkGrade(number)">
                             <a routerLink="/list/{{number}}" class="list-group-item list-group-item-action">
-                              Grade {{number}}
-                              <span class="badge badge-default badge-pill">14</span>
+                            Grade {{number}}
                             </a>
                             </div>
                             <div *ngIf="!checkGrade(number)">
                                     <a routerLink="/list/{{number}}" class="list-group-item list-group-item-action disabled">
                                       Grade {{number}}
-                                      <span class="badge badge-default badge-pill">14</span>
                             </a>
                             </div>
                             </div> 

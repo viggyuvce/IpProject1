@@ -1,6 +1,7 @@
 module.exports.optionController = require('./controllers/optionController.js');
 module.exports.getName = require('./controllers/getName.js');
 module.exports.getCompletedGrades = require('./controllers/getCompletedGrades.js');
+module.exports.getCompletedRanks = require('./controllers/getCompletedRanks.js');
 /*module.exports.insertComposer = require('./controllers/insertComposer.js');
 
 module.exports.insertGenre = require('./controllers/insertGenre.js');

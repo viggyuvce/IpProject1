@@ -9,8 +9,9 @@ import {PostsService} from '../services/posts.service';
 })
 export class GradeComponent  {
     id: string;
+    name: string;
     completedGrades: number;
-    numbers = [1,2,3,4,5,6,7,8,9,10];
+    numbers = [1,2,3,4,5,6,7,8];
     loggedin = false;
     loggedout = true;
     constructor(
@@ -32,7 +33,15 @@ export class GradeComponent  {
             
                 }
              );
-             
+             postService.getName(this.id)
+             .subscribe(
+                data => {
+                    this.name = data;
+                },
+                error => {
+            
+                }
+            )
             
          }
      }

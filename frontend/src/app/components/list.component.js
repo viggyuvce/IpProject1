@@ -12,11 +12,12 @@ var core_1 = require("@angular/core");
 var router_1 = require("@angular/router");
 var posts_service_1 = require("../services/posts.service");
 var ListComponent = (function () {
-    function ListComponent(router, postService) {
+    function ListComponent(router, route, postService) {
         var _this = this;
         this.router = router;
+        this.route = route;
         this.postService = postService;
-        this.numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+        this.numbers = [1, 2, 3, 4, 5, 6, 7, 8];
         this.loggedin = false;
         this.loggedout = true;
         this.id = this.postService.check();
@@ -34,6 +35,15 @@ var ListComponent = (function () {
                 _this.completedRanks = data;
                 console.log(_this.completedRanks);
             }, function (error) {
+            });
+            postService.getName(this.id)
+                .subscribe(function (data) {
+                _this.name = data;
+            }, function (error) {
+            });
+            this.route.params.subscribe(function (params) {
+                _this.currentPageGrade = Number.parseInt(params['id']);
+                console.log(_this.currentPageGrade);
             });
         }
     }
@@ -62,6 +72,7 @@ ListComponent = __decorate([
         moduleId: module.id
     }),
     __metadata("design:paramtypes", [router_1.Router,
+        router_1.ActivatedRoute,
         posts_service_1.PostsService])
 ], ListComponent);
 exports.ListComponent = ListComponent;

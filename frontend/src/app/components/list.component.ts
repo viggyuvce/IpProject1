@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {Router} from '@angular/router';
+import {Router,ActivatedRoute} from '@angular/router';
 import {PostsService} from '../services/posts.service';
 @Component({
     selector: 'profile',
@@ -9,14 +9,16 @@ import {PostsService} from '../services/posts.service';
 })
 export class ListComponent  {
     id: string;
+    name: string;
     completedGrades: number;
     completedRanks: number;
     currentPageGrade: number;
-    numbers = [1,2,3,4,5,6,7,8,9,10];
+    numbers = [1,2,3,4,5,6,7,8];
     loggedin = false;
     loggedout = true;
     constructor(
         private router: Router,
+        private route: ActivatedRoute,
         private postService : PostsService
      ) { 
          this.id = this.postService.check();
@@ -44,7 +46,19 @@ export class ListComponent  {
             
                 }
              );
+             postService.getName(this.id)
+             .subscribe(
+                data => {
+                    this.name = data;
+                },
+                error => {
             
+                }
+            );
+            this.route.params.subscribe(params => {
+                this.currentPageGrade = Number.parseInt(params['id']);
+                console.log(this.currentPageGrade);
+             });
          }
      }
     check(num:number){

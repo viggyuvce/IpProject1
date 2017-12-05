@@ -16,7 +16,7 @@ var GradeComponent = (function () {
         var _this = this;
         this.router = router;
         this.postService = postService;
-        this.numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+        this.numbers = [1, 2, 3, 4, 5, 6, 7, 8];
         this.loggedin = false;
         this.loggedout = true;
         this.id = this.postService.check();
@@ -27,6 +27,11 @@ var GradeComponent = (function () {
                 .subscribe(function (data) {
                 _this.completedGrades = data;
                 console.log(_this.completedGrades);
+            }, function (error) {
+            });
+            postService.getName(this.id)
+                .subscribe(function (data) {
+                _this.name = data;
             }, function (error) {
             });
         }

@@ -4,6 +4,7 @@
                 <a class="navbar-brand active mr-auto" href="#" routerLink="/">Musyqa</a>
             <div>
                 <ul class="nav navbar-nav navbar-right nav-buttons">
+                    <li><a class="btn">Hello {{name}}!</a></li>
                     <li><a class="btn" (click)="logout()" routerLink="/logout">Logout</a></li>
                     <li><a class="btn"  routerLink="/about">About</a></li>
                 </ul>
@@ -17,13 +18,11 @@
                             <div *ngIf="check(number)">
                             <a routerLink="/music/{{currentPageGrade}}/{{number}}" class="list-group-item list-group-item-action">
                               Music {{number}}
-                              <span class="badge badge-default badge-pill">14</span>
                             </a>
                             </div>
                             <div *ngIf="!check(number)">
                                     <a routerLink="/music/{{currentPageGrade}}/{{number}}" class="list-group-item list-group-item-action disabled">
                                       Music {{number}}
-                                      <span class="badge badge-default badge-pill">14</span>
                             </a>
                             </div>
                             </div> 

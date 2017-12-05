@@ -21,7 +21,7 @@ export class PostsService {
                 .map(res => res.json());
     }
     getCompletedRanks(id: string){
-        return this.http.get('http://localhost:9889/getCompletedGrades/'+id)
+        return this.http.get('http://localhost:9889/getCompletedRanks/'+id)
                 .map(res => res.json());
     }
     getName(id: string){
