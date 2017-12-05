@@ -1,0 +1,89 @@
+<div *ngIf="loggedin">
+    <nav class="navbar navbar-fixed-top navbar-default" style="background: white none repeat scroll 0% 0%;">
+        <div class="container-fluid">
+            <a class="navbar-brand active mr-auto" href="#" routerLink="/">Musyqa</a>
+        <div>
+            <ul class="nav navbar-nav navbar-right nav-buttons">
+                <li><a class="btn">Hello {{name}}!</a></li>
+                <li><a class="btn" (click)="logout()" routerLink="/logout">Logout</a></li>
+                <li><a class="btn"  routerLink="/about">About</a></li>
+            </ul>
+        </div>
+        </div>
+    </nav>
+    <div class="course-container">
+        <div class="container">
+            <hr/>
+            <hr/>
+            <h1>
+                Measure
+            </h1>
+            <img src="images/measure.png">
+            <p>
+                In musical notation, a bar (or measure) is a segment of time corresponding to a specific number of beats in which each beat is represented by a particular note value and the boundaries of the bar are indicated by vertical bar lines. Dividing music into bars provides regular reference points to pinpoint locations within a musical composition. It also makes written music easier to follow, since each bar of staff symbols can be read and played as a batch.[1] Typically, a piece consists of several bars of the same length, and in modern musical notation the number of beats in each bar is specified at the beginning of the score by the time signature. In simple time, (such as 3
+                4), the top figure indicates the number of beats per bar, while the bottom number indicates the note value of the beat (the beat has a quarter note value in the 3
+                4 example).
+            </p>
+            <hr/>
+            <hr/>
+            <h1>Time Signature</h1>
+            <img src="images/timeSignature.jpg" height=50% width=50%>
+            <p>
+                The time signature (also known as meter signature,[1] metre signature,[2] or measure signature[3]) is a notational convention used in Western musical notation to specify how many beats (pulses) are to be contained in each measure (bar) and which note value is equivalent to one beat. In a music score, the time signature appears at the beginning, as a time symbol or stacked numerals, such as Commontime inline.png or 3
+                4 (read common time and three-four time, respectively), immediately following the key signature or immediately following the clef symbol if the key signature is empty. A mid-score time signature, usually immediately following a barline, indicates a change of meter
+            </p>
+            <hr/>
+            <ul>
+                <li>
+                    <h2>Common Time</h2>
+                    <p>
+                        Widely used in most forms of Western popular music. Most common time signature in rock, blues, country, funk, and pop.
+                    </p>
+                </li>
+                <li>
+                    <h2>Cut Time</h2>
+                    <p>
+                        Used for marches and fast orchestral music. Frequently occurs in musical theater. The same effect is sometimes obtained by marking a 4
+                        4 meter "in 2"
+                    </p>
+                </li>
+                <li>
+                    <h2>
+                        Waltz Time
+                    </h2>
+                    <p>
+                        Used for waltzes, minuets, scherzi, polonaises, mazurkas, country " western ballads, R&amp;B, sometimes used in pop.
+                    </p>
+                </li>
+                <li>
+                    <h2>6/8 Time</h2>
+                    <p>
+                        Double jigs, polkas, sega, salegy, tarantella, marches, barcarolles, loures, and some rock music
+                    </p>
+                </li>
+            </ul>
+        </div>
+        <button type="button" class="btn btn-primary" routerLink="/course/complete">Next</button>   
+    </div>
+    
+</div>
+<div *ngIf="loggedout">
+    <nav class="navbar navbar-fixed-top navbar-default" style="background: white none repeat scroll 0% 0%;">
+        <div class="container-fluid">
+            <a class="navbar-brand active mr-auto" href="#" routerLink="/">Musyqa</a>
+        <div>
+            <ul class="nav navbar-nav navbar-right nav-buttons">
+                    <li><a class="btn" routerLink="/signup">Signup</a></li>
+                <li><a class="btn" routerLink="/login">Login</a></li>
+                <li><a class="btn" routerLink="/about">About</a></li>
+                
+            </ul>
+        </div>
+        </div>
+    </nav>
+    <div class ="logout-page">
+        <div class="container jumbotron jumbotron-logout">
+        <h3>PLEASE LOGIN/SIGNUP</h3>
+        </div>
+    </div>
+</div>

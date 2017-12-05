@@ -10,6 +10,9 @@ import {ProfileComponent} from './components/profile.component';
 import {ListComponent} from './components/list.component';
 import { TheoryIntroComponent } from './components/theory.intro';
 import {SCLComponent} from './components/courses/scl.component';
+import {NoteDurationComponent} from './components/courses/noteDuration.component';
+import {FinalComponent} from './components/courses/final.component';
+import {MeasuresComponent} from './components/courses/measures.component';
 const appRoutes: Routes = [
     {
         path : '',
@@ -50,6 +53,18 @@ const appRoutes: Routes = [
     {
         path : 'course/scl',
         component: SCLComponent
+    },
+    {
+        path : 'course/noteDuration',
+        component: NoteDurationComponent
+    },
+    {
+        path : 'course/measuresAndTimeSignature',
+        component: MeasuresComponent
+    },
+    {
+        path : 'course/complete',
+        component: FinalComponent
     },
 ];
 

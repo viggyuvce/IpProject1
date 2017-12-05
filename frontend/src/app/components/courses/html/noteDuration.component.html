@@ -1,0 +1,79 @@
+<div *ngIf="loggedin">
+    <nav class="navbar navbar-fixed-top navbar-default" style="background: white none repeat scroll 0% 0%;">
+        <div class="container-fluid">
+            <a class="navbar-brand active mr-auto" href="#" routerLink="/">Musyqa</a>
+        <div>
+            <ul class="nav navbar-nav navbar-right nav-buttons">
+                <li><a class="btn">Hello {{name}}!</a></li>
+                <li><a class="btn" (click)="logout()" routerLink="/logout">Logout</a></li>
+                <li><a class="btn"  routerLink="/about">About</a></li>
+            </ul>
+        </div>
+        </div>
+    </nav>
+    <div class="course-container">
+        <div class="container">
+            <hr/>
+            <hr/>
+            <h1>Note Duration</h1>
+            <img src="images/noteDuration.gif">
+            <hr/>
+            <hr/>
+            <h2>Whole Note (SemiBreve) </h2>
+            <p>
+                
+                The Whole note is the longest music note in general use today. It is an open note with no stem. The duration of the whole note is 4 quarter notes.
+                
+            </p>
+            <hr/>
+            <hr/>
+            <h2>Half Note (Minim)</h2>
+            <p>
+                The Half note duration is 2 quarter notes. It differs from the whole note in that it has a stem, although it is still open. 
+            </p>
+            <hr/>
+            <hr/>
+            <h2>Quarter Note (Crotchet)</h2>
+            <p>
+                The quarter note has become the de facto standard 1 beat music note. This has happened as the 4/4 time signature is the most popular (with 3/4 and 2/4 following close behind) and quarter notes have a duration of 1 in these time signatures. It is also roughly in the middle of the most used notes in the Rhythm Tree, making the quarter note the ideal candidate for ensuring whole notes don't become too long to count, and shorter, popular notes such as eighth and sixteenth notes aren't impossible to count in terms of them being fractions of a note. The quarter note changes from the half note as it is filled in, as opposed to empty.
+            </p>
+            <hr/>
+            <hr/>
+            <h2>Eighth Note (Quaver)</h2>
+            <p>
+                The eighth note is worth ½ of a Quarter note. It may also be considered as a one beat note in 3/8 and similar timings, the 8 on the bottom of the time signature giving the clue that you are counting in eighth notes. This is the first note in the rhythm tree to have a flag. The flag is the name for the 'tail' added to the eighth note. Eighth notes may be a single, or joined together with beams.
+                two eighth notes, quavers
+                
+                It is common to see eighth notes joined into sets of 2 to make one beat. Eighth notes may also be grouped in 3s, 4s, 5s, or even 6s depending on the time signature. Remember, however, that no matter how many eighth notes are joined, each one is worth half a quarter note.
+            </p>
+            <hr/>
+            <hr/>
+            <h2>Sixteenth Note (SemiQuaver)</h2>
+            <p>
+                The Sixteenth note is worth ¼ of a Quarter note. It may be beamed together in the same way as the eighth note. It changes from the eighth note by having an additional flag. 
+            </p>
+        </div>
+        <button type="button" class="btn btn-primary" routerLink="/course/measuresAndTimeSignature">Next course</button>   
+    </div>
+    
+</div>
+<div *ngIf="loggedout">
+    <nav class="navbar navbar-fixed-top navbar-default" style="background: white none repeat scroll 0% 0%;">
+        <div class="container-fluid">
+            <a class="navbar-brand active mr-auto" href="#" routerLink="/">Musyqa</a>
+        <div>
+            <ul class="nav navbar-nav navbar-right nav-buttons">
+                    <li><a class="btn" routerLink="/signup">Signup</a></li>
+                <li><a class="btn" routerLink="/login">Login</a></li>
+                <li><a class="btn" routerLink="/about">About</a></li>
+                
+            </ul>
+        </div>
+        </div>
+    </nav>
+    <div class ="logout-page">
+        <div class="container jumbotron jumbotron-logout">
+        <h3>PLEASE LOGIN/SIGNUP</h3>
+        </div>
+    </div>
+</div>

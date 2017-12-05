@@ -20,6 +20,9 @@ var grade_component_1 = require("./components/grade.component");
 var list_component_1 = require("./components/list.component");
 var theory_intro_1 = require("./components/theory.intro");
 var scl_component_1 = require("./components/courses/scl.component");
+var noteDuration_component_1 = require("./components/courses/noteDuration.component");
+var measures_component_1 = require("./components/courses/measures.component");
+var final_component_1 = require("./components/courses/final.component");
 var app_routing_1 = require("./app.routing");
 var AppModule = (function () {
     function AppModule() {
@@ -30,7 +33,8 @@ AppModule = __decorate([
     core_1.NgModule({
         imports: [platform_browser_1.BrowserModule, forms_1.FormsModule, http_1.HttpModule, app_routing_1.routing],
         declarations: [app_component_1.AppComponent, home_component_1.HomeComponent, list_component_1.ListComponent, about_component_1.AboutComponent, signup_component_1.SignupComponent, grade_component_1.GradeComponent, login_component_1.LoginComponent, profile_component_1.ProfileComponent,
-            logout_component_1.LogoutComponent, theory_intro_1.TheoryIntroComponent, scl_component_1.SCLComponent],
+            logout_component_1.LogoutComponent, theory_intro_1.TheoryIntroComponent, scl_component_1.SCLComponent, noteDuration_component_1.NoteDurationComponent, measures_component_1.MeasuresComponent,
+            final_component_1.FinalComponent],
         bootstrap: [app_component_1.AppComponent]
     })
 ], AppModule);
