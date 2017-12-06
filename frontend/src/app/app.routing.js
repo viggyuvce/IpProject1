@@ -13,6 +13,8 @@ var scl_component_1 = require("./components/courses/scl.component");
 var noteDuration_component_1 = require("./components/courses/noteDuration.component");
 var final_component_1 = require("./components/courses/final.component");
 var measures_component_1 = require("./components/courses/measures.component");
+var insert_component_1 = require("./components/insert.component");
+var music_component_1 = require("./components/music.component");
 var appRoutes = [
     {
         path: '',
@@ -65,6 +67,14 @@ var appRoutes = [
     {
         path: 'course/complete',
         component: final_component_1.FinalComponent
+    },
+    {
+        path: 'insertMusic',
+        component: insert_component_1.InsertComponent
+    },
+    {
+        path: 'music/:grade/:rank',
+        component: music_component_1.MusicComponent
     },
 ];
 exports.routing = router_1.RouterModule.forRoot(appRoutes);

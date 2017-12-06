@@ -13,7 +13,7 @@ export class ListComponent  {
     completedGrades: number;
     completedRanks: number;
     currentPageGrade: number;
-    numbers = [1,2,3,4,5,6,7,8];
+    numbers = [1,2,3,4,5];
     loggedin = false;
     loggedout = true;
     constructor(

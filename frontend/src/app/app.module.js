@@ -23,6 +23,8 @@ var scl_component_1 = require("./components/courses/scl.component");
 var noteDuration_component_1 = require("./components/courses/noteDuration.component");
 var measures_component_1 = require("./components/courses/measures.component");
 var final_component_1 = require("./components/courses/final.component");
+var insert_component_1 = require("./components/insert.component");
+var music_component_1 = require("./components/music.component");
 var app_routing_1 = require("./app.routing");
 var AppModule = (function () {
     function AppModule() {
@@ -34,7 +36,7 @@ AppModule = __decorate([
         imports: [platform_browser_1.BrowserModule, forms_1.FormsModule, http_1.HttpModule, app_routing_1.routing],
         declarations: [app_component_1.AppComponent, home_component_1.HomeComponent, list_component_1.ListComponent, about_component_1.AboutComponent, signup_component_1.SignupComponent, grade_component_1.GradeComponent, login_component_1.LoginComponent, profile_component_1.ProfileComponent,
             logout_component_1.LogoutComponent, theory_intro_1.TheoryIntroComponent, scl_component_1.SCLComponent, noteDuration_component_1.NoteDurationComponent, measures_component_1.MeasuresComponent,
-            final_component_1.FinalComponent],
+            final_component_1.FinalComponent, insert_component_1.InsertComponent, music_component_1.MusicComponent],
         bootstrap: [app_component_1.AppComponent]
     })
 ], AppModule);

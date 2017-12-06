@@ -17,12 +17,14 @@ import {SCLComponent} from './components/courses/scl.component';
 import {NoteDurationComponent} from './components/courses/noteDuration.component';
 import {MeasuresComponent} from './components/courses/measures.component';
 import {FinalComponent} from './components/courses/final.component';
+import {InsertComponent} from './components/insert.component';
+import {MusicComponent} from './components/music.component';
 import {routing} from './app.routing';
 @NgModule({
   imports:      [ BrowserModule, FormsModule, HttpModule, routing ],
   declarations: [ AppComponent,HomeComponent, ListComponent,AboutComponent, SignupComponent, GradeComponent,LoginComponent, ProfileComponent
                 ,LogoutComponent, TheoryIntroComponent,SCLComponent, NoteDurationComponent, MeasuresComponent,
-                FinalComponent],
+                FinalComponent, InsertComponent, MusicComponent],
   bootstrap:    [ AppComponent ]
 })
 export class AppModule { }

@@ -1,13 +1,14 @@
 var Controllers = require('./controllers.js');
 //var passport = requ
 module.exports = function (app,passport) {
-	/*
+	
 	app.get('/download/mp3/:id', function(req, res){
   		Controllers.downloader.getMp3(req,res);
 	});
 	app.get('/download/sheet/:id', function(req, res){
   		Controllers.downloader.getSheet(req,res);
 	});
+	/*
 	app.post("/api/insertComposer",function(req,res){
 		Controllers.insertComposer.insertComposer(req,res);
 	});
@@ -26,12 +27,7 @@ module.exports = function (app,passport) {
 	app.options("/api/insertGenre", function (req, res) {
 		Controllers.optionController.handler(req, res);
 	});
-	app.post("/api/insertMusic",function(req,res){
-		Controllers.insertMusic.insertMusic(req,res);
-	});
-	app.options("/api/insertMusic", function (req, res) {
-		Controllers.optionController.handler(req, res);
-	});
+	
 	app.get("/api/showComposerId/:composerId",function(req,res){
 		Controllers.showComposerId.postComposerId(req,res);
 	});
@@ -56,11 +52,23 @@ module.exports = function (app,passport) {
 	app.get("/api/showGenre",function(req,res){
 		Controllers.showGenre.showGenre(req,res);
 	});*/
+	app.get('/getMusic/:grade/:rank',function(req,res){
+		Controllers.getMusic.getMusic(req,res);
+	});
+	app.options("/insertMusic", function (req, res) {
+		Controllers.optionController.handler(req, res);
+	});
+	app.post("/insertMusic",function(req,res){
+		Controllers.insertMusic.insertMusic(req,res);
+	});
 	app.get('/getCompletedRanks/:id',function(req,res){
 		Controllers.getCompletedRanks.getCompletedRanks(req,res);
 	});
 	app.get('/getCompletedGrades/:id',function(req,res){
 		Controllers.getCompletedGrades.getCompletedGrades(req,res);
+	});
+	app.get('/updateRank/:id/:grade/:rank',function(req,res){
+		Controllers.updateRank.updateRank(req,res);
 	});
 	app.get('/getName/:id',function(req,res){
 		Controllers.getName.getName(req,res);

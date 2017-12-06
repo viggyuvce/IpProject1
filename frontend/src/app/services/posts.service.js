@@ -24,6 +24,10 @@ var PostsService = (function () {
         return this.http.post('http://localhost:9889/signup', user)
             .map(function (res) { return res.json(); });
     };
+    PostsService.prototype.createMusic = function (music) {
+        return this.http.post('http://localhost:9889/insertMusic', music)
+            .map(function (res) { return res.json(); });
+    };
     PostsService.prototype.getCompletedGrades = function (id) {
         return this.http.get('http://localhost:9889/getCompletedGrades/' + id)
             .map(function (res) { return res.json(); });
@@ -35,6 +39,12 @@ var PostsService = (function () {
     PostsService.prototype.getName = function (id) {
         return this.http.get('http://localhost:9889/getName/' + id)
             .map(function (res) { return res.json(); });
+    };
+    PostsService.prototype.getMusicModel = function (grade, rank) {
+        return this.http.get('http://localhost:9889/getMusic/' + grade + '/' + rank).map(function (res) { return res.json(); });
+    };
+    PostsService.prototype.updateRank = function (rank, grade, id) {
+        return this.http.get('http://localhost:9889/update/' + id + '/' + grade + '/' + rank);
     };
     PostsService.prototype.logout = function () {
         localStorage.clear();

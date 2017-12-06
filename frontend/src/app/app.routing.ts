@@ -13,6 +13,9 @@ import {SCLComponent} from './components/courses/scl.component';
 import {NoteDurationComponent} from './components/courses/noteDuration.component';
 import {FinalComponent} from './components/courses/final.component';
 import {MeasuresComponent} from './components/courses/measures.component';
+import {InsertComponent} from './components/insert.component';
+import {MusicComponent} from './components/music.component';
+
 const appRoutes: Routes = [
     {
         path : '',
@@ -65,6 +68,14 @@ const appRoutes: Routes = [
     {
         path : 'course/complete',
         component: FinalComponent
+    },
+    {
+        path : 'insertMusic',
+        component: InsertComponent
+    },
+    {
+        path : 'music/:grade/:rank',
+        component: MusicComponent
     },
 ];
 

@@ -1,0 +1,36 @@
+<header class="music-container" style="background: url(images/grade.jpg)">
+    <div *ngIf ="music">
+  
+      <div class="row">
+              <h1>{{music.title}}</h1>
+      </div>
+      <hr />
+      <div class="row">
+          <p>{{music.description}}</p>
+      </div>
+      <hr />
+     <!-- <h3>Popular musics of {{music.composerName}}</h3>-->
+      <hr />
+      <div class="row">
+          <p>Scale : {{music.scale}}</p>
+      </div>
+      <hr />
+      <div>
+        <iframe width="560" height="315" [src]="sanitizedLink" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe> 
+      </div>
+      
+      <hr />
+      <div class="row">
+          <p>Click on the Mp3 button to download mp3</p>
+          <button (click)="downloadMp3()">Mp3</button>
+      </div>
+      <hr />
+      <div class="row">
+          <p>Click on the Sheet button to download sheet music</p>
+          <button (click)="downloadSheet()">Sheet</button>
+      </div>
+     <hr/>
+     <hr/>
+     <button type="button" class="btn btn-primary" (click)="update()">Next</button>   
+    </div>  
+  </header>
