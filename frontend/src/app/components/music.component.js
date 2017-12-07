@@ -66,8 +66,12 @@ var MusicComponent = (function () {
         window.open("http://localhost:9889/download/sheet/" + this.music.id);
     };
     MusicComponent.prototype.update = function () {
-        this.postService.updateRank(this.nextGrade, this.nextRank, this.id);
-        this.router.navigate(['/music/' + this.nextGrade + '/' + this.nextRank]);
+        this.postService.updateRank(this.nextRank, this.nextGrade, this.id).subscribe(function (data) {
+            console.log("done");
+        }, function (error) {
+            console.log("error");
+        });
+        this.router.navigate(['/list/' + this.nextGrade]);
     };
     MusicComponent.prototype.logout = function () {
         this.postService.logout();

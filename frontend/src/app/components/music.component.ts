@@ -83,8 +83,15 @@ export class MusicComponent  {
         window.open("http://localhost:9889/download/sheet/"+this.music.id);
       }
       update(){
-          this.postService.updateRank(this.nextGrade,this.nextRank,this.id);
-          this.router.navigate(['/music/'+this.nextGrade+'/'+this.nextRank]);
+          this.postService.updateRank(this.nextRank,this.nextGrade,this.id).subscribe(
+              data=>{
+                  console.log("done");
+              },
+              error=>{
+                console.log("error");
+              }
+          );
+          this.router.navigate(['/list/'+this.nextGrade]);
       }
     logout(){
         this.postService.logout();

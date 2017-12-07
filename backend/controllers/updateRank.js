@@ -1,22 +1,23 @@
 "use strict";
 var models=require('../models');
 
-var music=models['music'];
+var user=models['user'];
 
 
 module.exports={
     updateRank:function (req,res){
         
-        music.find({
+        user.find({
             where:{
                 id: req.params.id
             }
             
         }).then(function (initialDAO){
             initialDAO.update({
-                rank: req.params.rank,
-                grade : req.params.grade
+                ranks: req.params.rank,
+                grades : req.params.grade
             });
+            console.log(initialDAO);
             res.header('Access-Control-Allow-Origin','*');
 		    res.header('Content-Type','application/json');
             res.json(initialDAO.dataValues);

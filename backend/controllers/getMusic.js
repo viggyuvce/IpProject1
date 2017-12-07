@@ -9,8 +9,8 @@ module.exports={
         
         music.find({
             where:{
-                grade:req.params.grade,
-                rank:req.params.rank
+                grade:parseInt(req.params.grade),
+                rank:parseInt(req.params.rank)
             }
             
         }).then(function (initialDAO){

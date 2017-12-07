@@ -67,7 +67,7 @@ module.exports = function (app,passport) {
 	app.get('/getCompletedGrades/:id',function(req,res){
 		Controllers.getCompletedGrades.getCompletedGrades(req,res);
 	});
-	app.get('/updateRank/:id/:grade/:rank',function(req,res){
+	app.get('/update/:id/:grade/:rank',function(req,res){
 		Controllers.updateRank.updateRank(req,res);
 	});
 	app.get('/getName/:id',function(req,res){
