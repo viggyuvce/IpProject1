@@ -15,6 +15,7 @@ import {FinalComponent} from './components/courses/final.component';
 import {MeasuresComponent} from './components/courses/measures.component';
 import {InsertComponent} from './components/insert.component';
 import {MusicComponent} from './components/music.component';
+import {FinalGradeComponent} from './components/final.grade';
 
 const appRoutes: Routes = [
     {
@@ -68,6 +69,10 @@ const appRoutes: Routes = [
     {
         path : 'course/complete',
         component: FinalComponent
+    },
+    {
+        path : 'grades/complete/:grade',
+        component: FinalGradeComponent
     },
     {
         path : 'insertMusic',

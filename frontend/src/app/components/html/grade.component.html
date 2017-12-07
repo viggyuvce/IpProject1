@@ -25,7 +25,7 @@
                             </a>
                             </div>
                             <div *ngIf="!checkGrade(number)">
-                                    <a routerLink="/list/{{number}}" class="list-group-item list-group-item-action disabled">
+                                    <a routerLink="/list/{{number}}" class="list-group-item list-group-item-action disabled inactiveLink" onclick="return false" disabled="disabled">
                                       Grade {{number}}
                             </a>
                             </div>

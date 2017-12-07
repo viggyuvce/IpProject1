@@ -15,6 +15,7 @@ var final_component_1 = require("./components/courses/final.component");
 var measures_component_1 = require("./components/courses/measures.component");
 var insert_component_1 = require("./components/insert.component");
 var music_component_1 = require("./components/music.component");
+var final_grade_1 = require("./components/final.grade");
 var appRoutes = [
     {
         path: '',
@@ -67,6 +68,10 @@ var appRoutes = [
     {
         path: 'course/complete',
         component: final_component_1.FinalComponent
+    },
+    {
+        path: 'grades/complete/:grade',
+        component: final_grade_1.FinalGradeComponent
     },
     {
         path: 'insertMusic',

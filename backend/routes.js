@@ -8,6 +8,9 @@ module.exports = function (app,passport) {
 	app.get('/download/sheet/:id', function(req, res){
   		Controllers.downloader.getSheet(req,res);
 	});
+	app.get('/download/certificate/:id', function(req, res){
+		Controllers.downloader.getCertificate(req,res);
+  });
 	/*
 	app.post("/api/insertComposer",function(req,res){
 		Controllers.insertComposer.insertComposer(req,res);

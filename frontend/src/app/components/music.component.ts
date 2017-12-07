@@ -20,6 +20,7 @@ export class MusicComponent  {
     nextGrade: number;
     irank : number;
     music : any = {};
+    finalMusic = false;
     sanitizedLink : SafeResourceUrl;
     loggedin = false;
     loggedout = true;
@@ -64,6 +65,7 @@ export class MusicComponent  {
              .subscribe(
                  data => {
                     this.music = data;
+                    if(this.music.rank == 5) this.finalMusic = true; 
                     console.log(this.music.link);
                     this.sanitizedLink = this.sanitizer.bypassSecurityTrustResourceUrl(this.music.link);
                     console.log(this.sanitizedLink);

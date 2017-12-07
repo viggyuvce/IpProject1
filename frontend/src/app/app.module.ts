@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import {FormsModule}     from '@angular/forms';
 import {HttpModule}     from '@angular/http';
 
+import {FinalGradeComponent} from './components/final.grade';
 import {LogoutComponent} from './components/logout.component';
 import { AppComponent }  from './app.component';
 import { HomeComponent}  from './components/home.component'
@@ -24,7 +25,7 @@ import {routing} from './app.routing';
   imports:      [ BrowserModule, FormsModule, HttpModule, routing ],
   declarations: [ AppComponent,HomeComponent, ListComponent,AboutComponent, SignupComponent, GradeComponent,LoginComponent, ProfileComponent
                 ,LogoutComponent, TheoryIntroComponent,SCLComponent, NoteDurationComponent, MeasuresComponent,
-                FinalComponent, InsertComponent, MusicComponent],
+                FinalComponent, InsertComponent, MusicComponent, FinalGradeComponent],
   bootstrap:    [ AppComponent ]
 })
 export class AppModule { }

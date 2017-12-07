@@ -1,10 +1,31 @@
-<header class="music-container" style="background: url(images/grade.jpg)">
+<div *ngIf="loggedin">
+    <nav class="navbar navbar-fixed-top navbar-default" style="background: white none repeat scroll 0% 0%;">
+        <div class="container-fluid">
+            <a class="navbar-brand active mr-auto" href="#" routerLink="/">Musyqa</a>
+        <div>
+            <ul class="nav navbar-nav navbar-right nav-buttons">
+                    <li><a class="btn" routerLink="/list/{{music.grade}}">List</a></li>
+                    <li><a class="btn">Hello {{name}}!</a></li>
+
+                <li><a class="btn" (click)="logout()" routerLink="/logout">Logout</a></li>
+                <li><a class="btn"  routerLink="/about">About</a></li>
+            </ul>
+        </div>
+        </div>
+    </nav>
+
+<div class="music-page">
+    
     <div *ngIf ="music">
-  
-      <div class="row">
-              <h1>{{music.title}}</h1>
-      </div>
+      <section id="music">  
+          <div class="container music-container">
+     <hr/>
+     <hr/>
+     <hr/>
       <hr />
+      <div clss="row">
+          <h1>{{music.title}}</h1>
+      </div>
       <div class="row">
           <p>{{music.description}}</p>
       </div>
@@ -31,6 +52,36 @@
       </div>
      <hr/>
      <hr/>
-     <button type="button" class="btn btn-primary" (click)="update()">Done</button>   
-    </div>  
-  </header>
+     <div *ngIf="finalMusic">
+        <button type="button" class="btn btn-primary" routerLink="/grades/complete/{{music.grade}}">Done</button>
+     </div>
+     <div *ngIf="!finalMusic">
+        <button type="button" class="btn btn-primary" (click)="update()">Done</button>
+     </div>
+     </div>
+        </section>
+    </div>
+      
+</div>
+  </div>
+  <div *ngIf="loggedout">
+    <nav class="navbar navbar-fixed-top navbar-default" style="background: white none repeat scroll 0% 0%;">
+        <div class="container-fluid">
+            <a class="navbar-brand active mr-auto" href="#" routerLink="/">Musyqa</a>
+        <div>
+            <ul class="nav navbar-nav navbar-right nav-buttons">
+                    <li><a class="btn" routerLink="/signup">Signup</a></li>
+                <li><a class="btn" routerLink="/login">Login</a></li>
+                <li><a class="btn" routerLink="/about">About</a></li>
+                
+            </ul>
+        </div>
+        </div>
+    </nav>
+    <div class ="logout-page">
+        <div class="container jumbotron jumbotron-logout">
+        <h3>PLEASE LOGIN/SIGNUP</h3>
+        </div>
+    </div>
+</div>
+

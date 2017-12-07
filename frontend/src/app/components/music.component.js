@@ -20,6 +20,7 @@ var MusicComponent = (function () {
         this.postService = postService;
         this.sanitizer = sanitizer;
         this.music = {};
+        this.finalMusic = false;
         this.loggedin = false;
         this.loggedout = true;
         this.id = this.postService.check();
@@ -51,6 +52,8 @@ var MusicComponent = (function () {
             postService.getMusicModel(this.grade, this.rank)
                 .subscribe(function (data) {
                 _this.music = data;
+                if (_this.music.rank == 5)
+                    _this.finalMusic = true;
                 console.log(_this.music.link);
                 _this.sanitizedLink = _this.sanitizer.bypassSecurityTrustResourceUrl(_this.music.link);
                 console.log(_this.sanitizedLink);

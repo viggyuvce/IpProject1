@@ -9,6 +9,7 @@ var core_1 = require("@angular/core");
 var platform_browser_1 = require("@angular/platform-browser");
 var forms_1 = require("@angular/forms");
 var http_1 = require("@angular/http");
+var final_grade_1 = require("./components/final.grade");
 var logout_component_1 = require("./components/logout.component");
 var app_component_1 = require("./app.component");
 var home_component_1 = require("./components/home.component");
@@ -36,7 +37,7 @@ AppModule = __decorate([
         imports: [platform_browser_1.BrowserModule, forms_1.FormsModule, http_1.HttpModule, app_routing_1.routing],
         declarations: [app_component_1.AppComponent, home_component_1.HomeComponent, list_component_1.ListComponent, about_component_1.AboutComponent, signup_component_1.SignupComponent, grade_component_1.GradeComponent, login_component_1.LoginComponent, profile_component_1.ProfileComponent,
             logout_component_1.LogoutComponent, theory_intro_1.TheoryIntroComponent, scl_component_1.SCLComponent, noteDuration_component_1.NoteDurationComponent, measures_component_1.MeasuresComponent,
-            final_component_1.FinalComponent, insert_component_1.InsertComponent, music_component_1.MusicComponent],
+            final_component_1.FinalComponent, insert_component_1.InsertComponent, music_component_1.MusicComponent, final_grade_1.FinalGradeComponent],
         bootstrap: [app_component_1.AppComponent]
     })
 ], AppModule);
