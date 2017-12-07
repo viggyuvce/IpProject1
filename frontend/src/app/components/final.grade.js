@@ -24,6 +24,7 @@ var FinalGradeComponent = (function () {
         this.notMatching = false;
         this.loggedin = false;
         this.loggedout = true;
+        this.nextRank = 1;
         this.id = this.postsService.check();
         console.log(this.id);
         if (this.id != null) {
@@ -40,6 +41,16 @@ var FinalGradeComponent = (function () {
         });
     }
     FinalGradeComponent.prototype.downloadCertificate = function () {
+        var _this = this;
+        this.route.params.subscribe(function (params) {
+            _this.nextGrade = Number.parseInt(params['grade']);
+            _this.nextGrade = _this.nextGrade + 1;
+        });
+        this.postsService.updateRank(this.nextRank, this.nextGrade, this.id).subscribe(function (data) {
+            console.log("done");
+        }, function (error) {
+            console.log("error");
+        });
         // this.postService.getMp3(this.post.id).subscribe()
         window.open("http://localhost:9889/download/certificate/" + this.grade);
     };

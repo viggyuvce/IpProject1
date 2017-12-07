@@ -20,6 +20,8 @@ export class FinalGradeComponent  {
     grade : string;
     loggedin = false;
     loggedout = true;
+    nextRank = 1;
+    nextGrade : number;
     constructor(private router: Router,
                 private route: ActivatedRoute,
                 private postsService: PostsService,
@@ -46,6 +48,18 @@ export class FinalGradeComponent  {
                 }
             
                 downloadCertificate(){
+                    this.route.params.subscribe(params => {
+                        this.nextGrade = Number.parseInt(params['grade']);
+                        this.nextGrade = this.nextGrade+1;
+                     });
+                    this.postsService.updateRank(this.nextRank,this.nextGrade,this.id).subscribe(
+                        data=>{
+                            console.log("done");
+                        },
+                        error=>{
+                          console.log("error");
+                        }
+                    );
                     // this.postService.getMp3(this.post.id).subscribe()
                      window.open("http://localhost:9889/download/certificate/"+this.grade);
                    }
